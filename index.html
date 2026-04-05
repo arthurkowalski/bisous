@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compte à rebours</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        input, button { padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+<h1>bisous</h1>
+
+<input type="text" id="date" value="2026-04-30 05:30:00">
+<br><br>
+<button onclick="calculer()">Calculer</button>
+
+<h2 id="resultat"></h2>
+
+<script>
+function calculer() {
+    const dateStr = document.getElementById("date").value;
+    const dateCible = new Date(dateStr);
+    const maintenant = new Date();
+
+    const delta = dateCible - maintenant;
+
+    if (delta < 0) {
+        document.getElementById("resultat").innerText = "Date passée";
+        return;
+    }
+
+    const secondes = Math.floor(delta / 1000);
+    const jours = Math.floor(secondes / (3600 * 24));
+    const heures = Math.floor((secondes % (3600 * 24)) / 3600);
+    const minutes = Math.floor((secondes % 3600) / 60);
+    const sec = secondes % 60;
+
+    document.getElementById("resultat").innerText =
+        `${jours} jours ${heures}h ${minutes}m ${sec}s`;
+}
+</script>
+
+</body>
+</html>
