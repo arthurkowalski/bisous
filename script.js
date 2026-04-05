@@ -96,7 +96,9 @@ function updateClocks() {
 
 
 
-
+document.querySelector("h1").addEventListener("click", () => {
+  alert("Je crois que je vous aime fort ❤️");
+});
 
 
 // mise à jour chaque seconde
