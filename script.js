@@ -82,13 +82,13 @@ function updateClocks() {
   let conclusion = "";
 
   if (shanghaiHour >= 0 && shanghaiHour < 6) {
-    conclusion = "Tu peux m’appeler (force un peu si ça ne réponds pas).";
+    conclusion = "Vous pouvez bien sur m’appeler (réitérez un peu si le combiné ne décroche pas du premier coup).";
   } else if (shanghaiHour < 12) {
-    conclusion = "Réveillé, tu peux assurément m’appeler.";
+    conclusion = "Réveillé ! Vous pouvez m’appeler. Heure du petit-déjeuner, dilemme entre tenir mon bol ou le téléphone";
   } else if (shanghaiHour < 22) {
-    conclusion = "Réveillé mais peut-être occupé à manger ou à chercher en vain un panda.";
+    conclusion = "Réveillé ! Vous pouvez m’appeler, mais il est probable que je sois occupé à manger ou à chercher en vain un panda.";
   } else {
-    conclusion = "Très bonne idée d’appeler.";
+    conclusion = "Bonne initiative, c'est effectivement une très bonne idée d’appeler.";
   }
 
   conclusionEl.textContent = conclusion;

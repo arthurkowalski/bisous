@@ -189,6 +189,10 @@ button.secondary {
   }
 }
 
+.card + .card {
+  margin-top: 40px;
+}
+
 .time-display {
   margin-top: 20px;
   display: grid;
