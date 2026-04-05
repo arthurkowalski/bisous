@@ -99,8 +99,9 @@ function updateClocks() {
 
 
 
-
-
+// mise à jour chaque seconde
+setInterval(updateClocks, 1000);
+updateClocks();
 
 // lancement auto
 updateCountdown();
