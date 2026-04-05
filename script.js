@@ -1,6 +1,3 @@
-const dateInput = document.getElementById("dateInput");
-const startBtn = document.getElementById("startBtn");
-const demoBtn = document.getElementById("demoBtn");
 const message = document.getElementById("message");
 
 const daysEl = document.getElementById("days");
@@ -8,8 +5,10 @@ const hoursEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
 
+// Date FIXE en UTC 30 avril 2026 05:30 GMT+8
+const targetDate = new Date("2026-04-29T21:30:00Z");
+
 let intervalId = null;
-let targetDate = null;
 
 function pad(value) {
   return String(value).padStart(2, "0");
@@ -20,24 +19,18 @@ function setMessage(text, type = "") {
   message.className = `message ${type}`.trim();
 }
 
-function resetCountdown() {
-  daysEl.textContent = "0";
-  hoursEl.textContent = "0";
-  minutesEl.textContent = "0";
-  secondsEl.textContent = "0";
-}
-
 function updateCountdown() {
-  if (!targetDate) return;
-
   const now = new Date();
   const delta = targetDate - now;
 
   if (delta <= 0) {
     clearInterval(intervalId);
-    intervalId = null;
-    resetCountdown();
-    setMessage("La date est atteinte.", "success");
+    setMessage("C’est le moment 🚀", "success");
+
+    daysEl.textContent = "0";
+    hoursEl.textContent = "00";
+    minutesEl.textContent = "00";
+    secondsEl.textContent = "00";
     return;
   }
 
@@ -54,54 +47,18 @@ function updateCountdown() {
   secondsEl.textContent = pad(seconds);
 }
 
-function startCountdown() {
-  const rawValue = dateInput.value;
+const tzInfo = document.getElementById("timezone-info");
 
-  if (!rawValue) {
-    setMessage("Merci de choisir une date valide.", "error");
-    return;
-  }
+const shanghaiTime = new Date(targetDate).toLocaleString("fr-FR", {
+  timeZone: "Asia/Shanghai",
+  dateStyle: "full",
+  timeStyle: "short"
+});
 
-  const parsedDate = new Date(rawValue);
+const localTime = new Date(targetDate).toLocaleString();
 
-  if (Number.isNaN(parsedDate.getTime())) {
-    setMessage("Le format de date est invalide.", "error");
-    return;
-  }
+tzInfo.textContent = `Heure Shanghai : ${shanghaiTime} | Ton heure locale : ${localTime}`;
 
-  if (parsedDate <= new Date()) {
-    setMessage("La date doit être dans le futur.", "error");
-    return;
-  }
-
-  targetDate = parsedDate;
-  setMessage("Compte à rebours lancé.", "success");
-
-  if (intervalId) {
-    clearInterval(intervalId);
-  }
-
-  updateCountdown();
-  intervalId = setInterval(updateCountdown, 1000);
-}
-
-function setDemoDate() {
-  const demo = new Date();
-  demo.setDate(demo.getDate() + 10);
-  demo.setHours(demo.getHours() + 3);
-  demo.setMinutes(demo.getMinutes() + 25);
-
-  const year = demo.getFullYear();
-  const month = pad(demo.getMonth() + 1);
-  const day = pad(demo.getDate());
-  const hours = pad(demo.getHours());
-  const minutes = pad(demo.getMinutes());
-
-  dateInput.value = `${year}-${month}-${day}T${hours}:${minutes}`;
-  setMessage("Date d'exemple remplie.");
-}
-
-startBtn.addEventListener("click", startCountdown);
-demoBtn.addEventListener("click", setDemoDate);
-
-resetCountdown();
+// lancement auto
+updateCountdown();
+intervalId = setInterval(updateCountdown, 1000);
