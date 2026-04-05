@@ -5,7 +5,9 @@ const hoursEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
 
-// Date FIXE en UTC 30 avril 2026 05:30 GMT+8
+
+
+// Date FIXE UTC+8 30 avril 2026 05:30
 const targetDate = new Date("2026-04-29T21:30:00Z");
 
 let intervalId = null;
@@ -25,7 +27,7 @@ function updateCountdown() {
 
   if (delta <= 0) {
     clearInterval(intervalId);
-    setMessage("C’est le moment 🚀", "success");
+    setMessage("Etes-vous dans mes bras ? Non ? Qu'attendez vous ?", "success");
 
     daysEl.textContent = "0";
     hoursEl.textContent = "00";
@@ -47,17 +49,7 @@ function updateCountdown() {
   secondsEl.textContent = pad(seconds);
 }
 
-const tzInfo = document.getElementById("timezone-info");
 
-const shanghaiTime = new Date(targetDate).toLocaleString("fr-FR", {
-  timeZone: "Asia/Shanghai",
-  dateStyle: "full",
-  timeStyle: "short"
-});
-
-const localTime = new Date(targetDate).toLocaleString();
-
-tzInfo.textContent = `Heure Shanghai : ${shanghaiTime} | Ton heure locale : ${localTime}`;
 
 // lancement auto
 updateCountdown();
