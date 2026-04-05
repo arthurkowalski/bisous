@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Compte à rebours</title>
-    <style>
-        body { font-family: Arial; text-align: center; margin-top: 50px; }
-        input, button { padding: 10px; font-size: 16px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compte à rebours</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main class="page">
+    <section class="card">
+      <p class="eyebrow">Compte à rebours</p>
+      <h1>Temps restant avant une date</h1>
+      <p class="subtitle">
+        Entre une date et visualise le temps restant en jours, heures, minutes et secondes.
+      </p>
 
-<h1>bisous</h1>
+      <div class="form-block">
+        <label for="dateInput">Date cible</label>
+        <input type="datetime-local" id="dateInput" />
+      </div>
 
-<input type="text" id="date" value="2026-04-30 05:30:00">
-<br><br>
-<button onclick="calculer()">Calculer</button>
+      <div class="actions">
+        <button id="startBtn">Lancer</button>
+        <button id="demoBtn" class="secondary">Exemple</button>
+      </div>
 
-<h2 id="resultat"></h2>
+      <div id="message" class="message"></div>
 
-<script>
-function calculer() {
-    const dateStr = document.getElementById("date").value;
-    const dateCible = new Date(dateStr);
-    const maintenant = new Date();
+      <section class="countdown" id="countdown">
+        <div class="time-box">
+          <span id="days">0</span>
+          <small>Jours</small>
+        </div>
+        <div class="time-box">
+          <span id="hours">0</span>
+          <small>Heures</small>
+        </div>
+        <div class="time-box">
+          <span id="minutes">0</span>
+          <small>Minutes</small>
+        </div>
+        <div class="time-box">
+          <span id="seconds">0</span>
+          <small>Secondes</small>
+        </div>
+      </section>
+    </section>
+  </main>
 
-    const delta = dateCible - maintenant;
-
-    if (delta < 0) {
-        document.getElementById("resultat").innerText = "Date passée";
-        return;
-    }
-
-    const secondes = Math.floor(delta / 1000);
-    const jours = Math.floor(secondes / (3600 * 24));
-    const heures = Math.floor((secondes % (3600 * 24)) / 3600);
-    const minutes = Math.floor((secondes % 3600) / 60);
-    const sec = secondes % 60;
-
-    document.getElementById("resultat").innerText =
-        `${jours} jours ${heures}h ${minutes}m ${sec}s`;
-}
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
