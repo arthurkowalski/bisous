@@ -51,6 +51,57 @@ function updateCountdown() {
 
 
 
+
+
+
+
+const localTimeEl = document.getElementById("local-time");
+const shanghaiTimeEl = document.getElementById("shanghai-time");
+const conclusionEl = document.getElementById("conclusion");
+
+function updateClocks() {
+  const now = new Date();
+
+  // heure locale
+  localTimeEl.textContent = now.toLocaleTimeString();
+
+  // heure Shanghai
+  const shanghaiTime = now.toLocaleTimeString("fr-FR", {
+    timeZone: "Asia/Shanghai"
+  });
+
+  shanghaiTimeEl.textContent = shanghaiTime;
+
+  // conclusion intelligente
+  const shanghaiHour = new Date().toLocaleString("en-US", {
+    timeZone: "Asia/Shanghai",
+    hour: "numeric",
+    hour12: false
+  });
+
+  let conclusion = "";
+
+  if (shanghaiHour >= 0 && shanghaiHour < 6) {
+    conclusion = "Tu peux m’appeler (force un peu si ça ne réponds pas).";
+  } else if (shanghaiHour < 12) {
+    conclusion = "Réveillé, tu peux assurément m’appeler.";
+  } else if (shanghaiHour < 22) {
+    conclusion = "Réveillé mais peut-être occupé à manger ou à chercher en vain un panda.";
+  } else {
+    conclusion = "Très bonne idée d’appeler.";
+  }
+
+  conclusionEl.textContent = conclusion;
+}
+
+
+
+
+
+
+
+
+
 // lancement auto
 updateCountdown();
 intervalId = setInterval(updateCountdown, 1000);
