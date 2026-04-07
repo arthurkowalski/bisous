@@ -100,6 +100,9 @@ document.querySelector("h1").addEventListener("click", () => {
   alert("Je crois que je vous aime fort ❤️");
 });
 
+document.querySelector(".countdown").addEventListener("click", () => {
+  alert("Je vais à la plage avec ma petite amie en août !!! ❤️ <br> Je crois (j'en suis sur même) que je suis amoureux");
+});
 
 // mise à jour chaque seconde
 setInterval(updateClocks, 1000);
