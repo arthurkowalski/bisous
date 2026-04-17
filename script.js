@@ -105,6 +105,23 @@ document.querySelector(".time-box").addEventListener("click", () => {
 });
 
 
+const speedBtn = document.getElementById("speed-btn");
+
+let attempts = 0;
+
+speedBtn.addEventListener("click", () => {
+  attempts++;
+
+  if (attempts === 1) {
+    alert("Tu y crois vraiment ?");
+  } else if (attempts === 2) {
+    alert("Toujours pas.");
+  } else {
+    alert("Je ne suis pas Dieu.");
+  }
+});
+
+
 // mise à jour chaque seconde
 setInterval(updateClocks, 1000);
 updateClocks();
