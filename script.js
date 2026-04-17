@@ -117,7 +117,7 @@ speedBtn.addEventListener("click", () => {
   } else if (attempts === 2) {
     alert("Malheureusement, je ne trouve pas le moyen de lier la fonctionnalité du bouton à la réalité.");
   } else {
-    alert("Votre petit a beau être fort, il n'est pas Dieu. Que diriez-vous d'un petit bisou à chaque fois que vous cliquez sur ce bouton ?");
+    alert("Votre petit ami a beau être fort, il n'est pas Dieu. A la place, que diriez-vous d'un petit bisou à chaque fois que vous cliquez sur ce bouton ?");
   }
 });
 
