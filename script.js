@@ -113,11 +113,11 @@ speedBtn.addEventListener("click", () => {
   attempts++;
 
   if (attempts === 1) {
-    alert("Tu y crois vraiment ?");
+    alert("J'aimerais tellement que ce bouton marche !");
   } else if (attempts === 2) {
-    alert("Toujours pas.");
+    alert("Malheureusement, je ne trouve pas le moyen de lier la fonctionnalité du bouton à la réalité.");
   } else {
-    alert("Je ne suis pas Dieu.");
+    alert("Votre petit a beau être fort, il n'est pas Dieu. Que diriez-vous d'un petit bisou à chaque fois que vous cliquez sur ce bouton ?");
   }
 });
 
