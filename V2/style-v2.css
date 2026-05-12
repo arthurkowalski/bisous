@@ -23,9 +23,9 @@ body {
   font-family: Inter, Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, #1d4ed8 0%, transparent 30%),
-    radial-gradient(circle at bottom right, #0f766e 0%, transparent 25%),
-    linear-gradient(135deg, var(--bg-1), var(--bg-2));
+    radial-gradient(circle at top left, #f97316 0%, transparent 30%),
+    radial-gradient(circle at bottom right, #ec4899 0%, transparent 25%),
+    linear-gradient(135deg, #3b0764, #111827);
 }
 
 body {
@@ -70,6 +70,8 @@ h1 {
   font-size: 1rem;
   line-height: 1.5;
   max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-block {
@@ -138,6 +140,7 @@ button.secondary {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  justify-items: center;
 }
 
 .time-box {
@@ -174,6 +177,7 @@ button.secondary {
   .card {
     padding: 22px;
     border-radius: 20px;
+    text-align: center;
   }
 
   .countdown {
