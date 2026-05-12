@@ -130,7 +130,7 @@ speedBtn.addEventListener("click", () => {
     alert("Rectification, je n'ai pas de partiels, vous pouvez réappuyer.");  
   } else if (attempts === 5) {
     alert('Work in progress... ("bruits de Festool")');  
-  } lse if (attempts === 6) {
+  } else if (attempts === 6) {
     alert("Votre petit ami a beau être fort, il n'est pas Dieu. A la place, que diriez-vous d'un petit bisou à chaque fois que vous cliquez sur ce bouton ?");  
   } else {
     alert("Hop, un bisou de plus !");
