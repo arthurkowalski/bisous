@@ -7,8 +7,8 @@ const secondsEl = document.getElementById("seconds");
 
 
 
-// Date FIXE UTC+8 30 avril 2026 05:30
-const targetDate = new Date("2026-06-13T28:05:00Z");
+// Date FIXE UTC+2 13 juin 2026 10:05
+const targetDate = new Date("2026-06-13T08:05:00Z");
 
 let intervalId = null;
 
