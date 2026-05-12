@@ -219,3 +219,13 @@ button.secondary {
   justify-content: center;
   margin-top: 20px;
 }
+
+
+.v2-button {
+  text-decoration: none;
+  color: inherit;
+}
+
+.v2-button:visited {
+  color: inherit;
+}
