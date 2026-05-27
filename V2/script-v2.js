@@ -86,7 +86,7 @@ function updateClocks() {
   } else if (shanghaiHour < 7) {
     conclusion = "Surement sous gros didi, non dodo, vous pouvez bien sur m’appeler (réitérez un peu si le combiné ne décroche pas du premier coup).";
   } else if (shanghaiHour < 9) {
-    conclusion = "Oui c'est une heure pour se réveiller en chine, mais quel luxe de grasse-matiner (je décrète que c'est un verbe). Aidez-moi à me tirer du sommeil en m'appelant !.";
+    conclusion = "Oui c'est une heure pour se réveiller en chine, mais quel luxe de grasse-matiner (je décrète que c'est un verbe). Aidez-moi à me tirer du sommeil en m'appelant (et en me faisant un petit bisou)!.";
   } else if (shanghaiHour < 10) {
     conclusion = "Réveillé ! Vous pouvez m’appeler. Heure du petit-déjeuner, dilemme entre tenir mon bol ou le téléphone";
   } else if (shanghaiHour < 12) {
