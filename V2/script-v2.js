@@ -112,7 +112,7 @@ document.querySelector(".time-box").addEventListener("click", () => {
   alert("Je vais à la plage avec ma petite amie en août !!! ❤️ Je crois (j'en suis sur même) que je suis amoureux");
 });
 
-document.querySelector(".ride").addEventListener("click", () => {
+document.getElementById("ride").addEventListener("click", () => {
   alert("Ca c'est la ride !");
 });
 
