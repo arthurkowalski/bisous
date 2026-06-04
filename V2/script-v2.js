@@ -113,7 +113,7 @@ document.querySelector(".time-box").addEventListener("click", () => {
 });
 
 document.getElementById("ride").addEventListener("click", () => {
-  alert("Ca c'est la ride !");
+  alert("Ça c'est la ride !");
 });
 
 
@@ -136,8 +136,10 @@ speedBtn.addEventListener("click", () => {
     alert('Work in progress... ("bruits de Festool")');  
   } else if (attempts === 6) {
     alert("Votre petit ami a beau être fort, il n'est pas Dieu. A la place, que diriez-vous d'un petit bisou à chaque fois que vous cliquez sur ce bouton ?");  
-  } else if (attempts > 8) {
+  } else if (attempts == 9) {
     alert("Vous entrez en crise de bisous, je suis avec vous dans peu de temps pour la calmer.");  
+  } else if (attempts > 9) {
+    alert("Vous entrez en crise de bisous, je suis avec vous dans peu de temps pour la calmer. Rassurez vous, un bisou s'ajoute toujours à chaque nouveau click.");  
   } else {
     alert("Hop, un bisou de plus !");
   }
