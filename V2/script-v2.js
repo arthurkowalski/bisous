@@ -90,7 +90,7 @@ function updateClocks() {
   } else if (shanghaiHour < 10) {
     conclusion = "Réveillé ! Vous pouvez m’appeler. Heure du petit-déjeuner, dilemme entre tenir mon bol ou le téléphone";
   } else if (shanghaiHour < 12) {
-    conclusion = "Réveillé ! Vous pouvez m’appeler, mais il est probable que je participe à un cours de Français débutant.";
+    conclusion = "Réveillé ! Vous pouvez m’appeler, je n'ai plus cours le matin ! Mais que faites-vous encore éveillée ?";
   } else if (shanghaiHour < 14) {
     conclusion = "Réveillé ! Vous pouvez m’appeler, mais il est probable que je me délecte d'un petit yaourt tarte tatin.";
   } else if (shanghaiHour < 19) {
@@ -110,6 +110,10 @@ document.querySelector("h1").addEventListener("click", () => {
 
 document.querySelector(".time-box").addEventListener("click", () => {
   alert("Je vais à la plage avec ma petite amie en août !!! ❤️ Je crois (j'en suis sur même) que je suis amoureux");
+});
+
+document.querySelector(".ride").addEventListener("click", () => {
+  alert("Ca c'est la ride !");
 });
 
 
@@ -132,6 +136,8 @@ speedBtn.addEventListener("click", () => {
     alert('Work in progress... ("bruits de Festool")');  
   } else if (attempts === 6) {
     alert("Votre petit ami a beau être fort, il n'est pas Dieu. A la place, que diriez-vous d'un petit bisou à chaque fois que vous cliquez sur ce bouton ?");  
+  } else if (attempts > 8) {
+    alert("Vous entrez en crise de bisous, je suis avec vous dans peu de temps pour la calmer.");  
   } else {
     alert("Hop, un bisou de plus !");
   }
